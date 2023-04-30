@@ -10,7 +10,7 @@ namespace PentaGol.Service.Interfaces
 {
     public interface ILeagueService
     {
-        ValueTask<LeagueResultDto> AddAsyn(LeagueCreationDto dto);
+        ValueTask<LeagueResultDto> AddAsync(LeagueCreationDto dto);
         ValueTask<LeagueResultDto> ModifyAsync(long id, LeagueCreationDto dto);
         ValueTask<bool> RemoveAsync(long id);
         ValueTask<LeagueResultDto> RetrieveById(long id);

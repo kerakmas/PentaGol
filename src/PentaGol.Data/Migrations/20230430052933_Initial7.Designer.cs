@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PentaGol.Data.Contexts;
 
@@ -11,9 +12,11 @@ using PentaGol.Data.Contexts;
 namespace PentaGol.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230430052933_Initial7")]
+    partial class Initial7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,6 +76,9 @@ namespace PentaGol.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<long>("LeaugeId")
+                        .HasColumnType("bigint");
+
                     b.Property<long>("LeaugueId")
                         .HasColumnType("bigint");
 
@@ -94,74 +100,6 @@ namespace PentaGol.Data.Migrations
                     b.HasIndex("LeaugueId");
 
                     b.ToTable("Clubs");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1L,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1808),
-                            ImgPath = "https://example.com/juventus.png",
-                            IsDeleted = false,
-                            LeaugueId = 1L,
-                            Name = "Juventus",
-                            TotalGamesPlayed = 0,
-                            TotalScoredGoals = 0
-                        },
-                        new
-                        {
-                            Id = 2L,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1810),
-                            ImgPath = "https://example.com/acmilan.png",
-                            IsDeleted = false,
-                            LeaugueId = 1L,
-                            Name = "AC Milan",
-                            TotalGamesPlayed = 0,
-                            TotalScoredGoals = 0
-                        },
-                        new
-                        {
-                            Id = 3L,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1812),
-                            ImgPath = "https://example.com/realmadrid.png",
-                            IsDeleted = false,
-                            LeaugueId = 3L,
-                            Name = "Real Madrid",
-                            TotalGamesPlayed = 0,
-                            TotalScoredGoals = 0
-                        },
-                        new
-                        {
-                            Id = 4L,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1813),
-                            ImgPath = "https://example.com/barcelona.png",
-                            IsDeleted = false,
-                            LeaugueId = 3L,
-                            Name = "Barcelona",
-                            TotalGamesPlayed = 0,
-                            TotalScoredGoals = 0
-                        },
-                        new
-                        {
-                            Id = 5L,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1815),
-                            ImgPath = "https://example.com/bayernmunich.png",
-                            IsDeleted = false,
-                            LeaugueId = 4L,
-                            Name = "Bayern Munich",
-                            TotalGamesPlayed = 0,
-                            TotalScoredGoals = 0
-                        },
-                        new
-                        {
-                            Id = 6L,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1816),
-                            ImgPath = "https://example.com/psg.png",
-                            IsDeleted = false,
-                            LeaugueId = 5L,
-                            Name = "Paris Saint-Germain",
-                            TotalGamesPlayed = 0,
-                            TotalScoredGoals = 0
-                        });
                 });
 
             modelBuilder.Entity("PentaGol.Domain.Entites.Leaugue", b =>
@@ -192,48 +130,6 @@ namespace PentaGol.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Leaugues");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1L,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1619),
-                            ImgPath = "https://s.scr365.net/s1/logo/22_221_7/v5wl5i_200_15.png",
-                            IsDeleted = false,
-                            Name = "Italia.Seria a"
-                        },
-                        new
-                        {
-                            Id = 2L,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1623),
-                            ImgPath = "https://b.fssta.com/uploads/application/soccer/competition-logos/EnglishPremierLeague.png",
-                            IsDeleted = false,
-                            Name = "Premier Liga"
-                        },
-                        new
-                        {
-                            Id = 3L,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1624),
-                            ImgPath = "https://iscreativestudio.com/wp-content/uploads/2016/08/logotipos4.jpg",
-                            IsDeleted = false,
-                            Name = "LaLiga"
-                        },
-                        new
-                        {
-                            Id = 4L,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1625),
-                            ImgPath = "https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Bundesliga_logo_%282017%29.svg/1200px-Bundesliga_logo_%282017%29.svg.png",
-                            IsDeleted = false,
-                            Name = "BundesLiga"
-                        },
-                        new
-                        {
-                            Id = 5L,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1626),
-                            ImgPath = "https://upload.wikimedia.org/wikipedia/commons/4/49/Ligue1_Uber_Eats_logo.png",
-                            IsDeleted = false,
-                            Name = "Ligue"
-                        });
                 });
 
             modelBuilder.Entity("PentaGol.Domain.Entites.Match", b =>
@@ -262,6 +158,9 @@ namespace PentaGol.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<long>("LeaugeId")
+                        .HasColumnType("bigint");
+
                     b.Property<long>("LeaugueId")
                         .HasColumnType("bigint");
 
@@ -283,47 +182,6 @@ namespace PentaGol.Data.Migrations
                     b.HasIndex("LeaugueId");
 
                     b.ToTable("Matches");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1L,
-                            AwayClubId = 2L,
-                            AwayClubScore = 0,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1838),
-                            HomeClubId = 1L,
-                            HomeClubScore = 0,
-                            IsDeleted = false,
-                            LeaugueId = 1L,
-                            MatchDate = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1835),
-                            Status = false
-                        },
-                        new
-                        {
-                            Id = 2L,
-                            AwayClubId = 4L,
-                            AwayClubScore = 0,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1847),
-                            HomeClubId = 3L,
-                            HomeClubScore = 0,
-                            IsDeleted = false,
-                            LeaugueId = 3L,
-                            MatchDate = new DateTime(2023, 5, 1, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1839),
-                            Status = false
-                        },
-                        new
-                        {
-                            Id = 3L,
-                            AwayClubId = 6L,
-                            AwayClubScore = 0,
-                            CreatedOn = new DateTime(2023, 4, 30, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1849),
-                            HomeClubId = 5L,
-                            HomeClubScore = 0,
-                            IsDeleted = false,
-                            LeaugueId = 4L,
-                            MatchDate = new DateTime(2023, 5, 2, 8, 41, 21, 879, DateTimeKind.Utc).AddTicks(1848),
-                            Status = false
-                        });
                 });
 
             modelBuilder.Entity("PentaGol.Domain.Entites.News", b =>

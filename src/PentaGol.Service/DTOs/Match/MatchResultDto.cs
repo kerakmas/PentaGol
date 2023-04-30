@@ -1,11 +1,4 @@
-﻿using PentaGol.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PentaGol.Service.DTOs.Match
+﻿namespace PentaGol.Service.DTOs.Match
 {
     public class MatchResultDto
     {
@@ -15,10 +8,10 @@ namespace PentaGol.Service.DTOs.Match
         public long HomeClubId { get; set; }
 
         public long AwayClubId { get; set; }
-
+        public long LeaugueId { get; set; }
         public int HomeClubScore { get; set; }
         public int AwayClubScore { get; set; }
 
-        public MatchProcess Status { get; set; }
+        public bool Status { get; set; }
     }
 }

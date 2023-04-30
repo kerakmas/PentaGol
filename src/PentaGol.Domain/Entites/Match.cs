@@ -1,10 +1,4 @@
 ﻿using PentaGol.Domain.Commons;
-using PentaGol.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PentaGol.Domain.Entites
 {
@@ -15,15 +9,15 @@ namespace PentaGol.Domain.Entites
         public long HomeClubId { get; set; }
         public Club HomeClub { get; set; }
 
-        public long LeaugeId { get; set; }
+        public long LeaugueId { get; set; }
         public Leaugue Leaugue { get; set; }
-       
-       public long AwayClubId { get; set; }
-       public Club AwayClub { get; set; }
 
-       public int HomeClubScore { get; set; }
-       public int AwayClubScore { get; set; }
+        public long AwayClubId { get; set; }
+        public Club AwayClub { get; set; }
 
-       public bool Status { get; set; }
+        public int HomeClubScore { get; set; }
+        public int AwayClubScore { get; set; }
+
+        public bool Status { get; set; }
     }
 }

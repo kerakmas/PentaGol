@@ -10,5 +10,6 @@ namespace PentaGol.Service.DTOs.League
     {
         public string Name { get; set; }
         public string ImgPath { get; set; }
+
     }
 }
